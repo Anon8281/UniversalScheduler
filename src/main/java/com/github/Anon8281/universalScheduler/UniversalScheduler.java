@@ -1,11 +1,10 @@
-package sevastjan.universalScheduler;
+package com.github.Anon8281.universalScheduler;
 
-import org.bukkit.Bukkit;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.FoliaScheduler;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.PaperScheduler;
 import org.bukkit.plugin.java.JavaPlugin;
-import sevastjan.universalScheduler.scheduling.schedulers.FoliaScheduler;
-import sevastjan.universalScheduler.scheduling.schedulers.PaperScheduler;
-import sevastjan.universalScheduler.scheduling.schedulers.TaskScheduler;
-import sevastjan.universalScheduler.utils.JavaUtil;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskScheduler;
+import com.github.Anon8281.universalScheduler.utils.JavaUtil;
 
 public class UniversalScheduler extends JavaPlugin {
     private static final boolean isFolia = JavaUtil.classExists("io.papermc.paper.threadedregions.RegionizedServer");

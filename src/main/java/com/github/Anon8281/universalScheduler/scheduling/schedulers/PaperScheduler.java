@@ -1,12 +1,12 @@
-package sevastjan.universalScheduler.scheduling.schedulers;
+package com.github.Anon8281.universalScheduler.scheduling.schedulers;
 
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.PaperScheduledTask;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import sevastjan.universalScheduler.scheduling.tasks.MyScheduledTask;
-import sevastjan.universalScheduler.scheduling.tasks.PaperScheduledTask;
 
 public class PaperScheduler implements TaskScheduler {
 

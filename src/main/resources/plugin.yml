@@ -1,6 +1,6 @@
 name: UniversalScheduler
 version: ${project.version}
-main: sevastjan.universalScheduler.UniversalScheduler
+main: com.github.Anon8281.universalScheduler.UniversalScheduler
 folia-supported: true
 api-version: 1.19
 authors: [ Sevastjan, Anon8281, Several]

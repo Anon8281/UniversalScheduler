@@ -1,5 +1,6 @@
-package sevastjan.universalScheduler.scheduling.schedulers;
+package com.github.Anon8281.universalScheduler.scheduling.schedulers;
 
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
 import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
 import io.papermc.paper.threadedregions.scheduler.RegionScheduler;
@@ -8,8 +9,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import sevastjan.universalScheduler.scheduling.tasks.FoliaScheduledTask;
-import sevastjan.universalScheduler.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.FoliaScheduledTask;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package sevastjan.universalScheduler.scheduling.tasks;
+package com.github.Anon8281.universalScheduler.scheduling.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;

@@ -1,4 +1,4 @@
-package sevastjan.universalScheduler.scheduling.tasks;
+package com.github.Anon8281.universalScheduler.scheduling.tasks;
 
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import org.bukkit.plugin.Plugin;
