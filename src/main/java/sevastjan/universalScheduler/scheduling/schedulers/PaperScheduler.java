@@ -66,6 +66,36 @@ public class PaperScheduler implements TaskScheduler {
         return new PaperScheduledTask(Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, runnable, delay, period));
     }
 
+    //Useless? Or...
+    public @NotNull MyScheduledTask runTask(JavaPlugin plugin, @NotNull Runnable runnable) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTask(plugin, runnable));
+    }
+
+    @Override
+    public @NotNull MyScheduledTask runTaskLater(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTaskLater(plugin, runnable, delay));
+    }
+
+    @Override
+    public @NotNull MyScheduledTask runTaskTimer(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTaskTimer(plugin, runnable, delay, period));
+    }
+
+    @Override
+    public @NotNull MyScheduledTask runTaskAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTaskAsynchronously(plugin, runnable));
+    }
+
+    @Override
+    public @NotNull MyScheduledTask runTaskLaterAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, runnable, delay));
+    }
+
+    @Override
+    public @NotNull MyScheduledTask runTaskTimerAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+        return new PaperScheduledTask(Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, runnable, delay, period));
+    }
+
     @Override
     public void cancelTasks() {
         Bukkit.getScheduler().cancelTasks(plugin);
