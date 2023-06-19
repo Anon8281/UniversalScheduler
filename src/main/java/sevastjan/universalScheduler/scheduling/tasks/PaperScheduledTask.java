@@ -4,14 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
-import sevastjan.universalScheduler.UniversalScheduler;
-
-import javax.inject.Inject;
 
 public class PaperScheduledTask implements MyScheduledTask {
-
-    @Inject
-    UniversalScheduler plugin;
 
     BukkitTask task;
 

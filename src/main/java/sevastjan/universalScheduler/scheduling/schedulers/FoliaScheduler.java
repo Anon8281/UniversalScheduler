@@ -6,8 +6,8 @@ import io.papermc.paper.threadedregions.scheduler.RegionScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import sevastjan.universalScheduler.UniversalScheduler;
 import sevastjan.universalScheduler.scheduling.tasks.FoliaScheduledTask;
 import sevastjan.universalScheduler.scheduling.tasks.MyScheduledTask;
 
@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class FoliaScheduler implements TaskScheduler {
 
-    final UniversalScheduler plugin;
+    final JavaPlugin plugin;
 
-    public FoliaScheduler(UniversalScheduler plugin) {
+    public FoliaScheduler(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 

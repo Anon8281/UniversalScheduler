@@ -7,17 +7,20 @@ import sevastjan.universalScheduler.scheduling.schedulers.TaskScheduler;
 import sevastjan.universalScheduler.utils.JavaUtil;
 
 public class UniversalScheduler extends JavaPlugin {
-    private final boolean isFolia = JavaUtil.classExists("io.papermc.paper.threadedregions.RegionizedServer");
-    private static TaskScheduler scheduler;
-    UniversalScheduler plugin;
+    private static final boolean isFolia = JavaUtil.classExists("io.papermc.paper.threadedregions.RegionizedServer");
+    static UniversalScheduler plugin;
 
     @Override
     public void onEnable() {
         plugin = this;
-        scheduler = isFolia ? new FoliaScheduler(plugin) : new PaperScheduler(this);
     }
 
+    public static TaskScheduler getScheduler(JavaPlugin plugin) {
+        return isFolia ? new FoliaScheduler(plugin) : new PaperScheduler(plugin);
+    }
+
+    @Deprecated
     public static TaskScheduler getScheduler() {
-        return scheduler;
+        return getScheduler(plugin);
     }
 }

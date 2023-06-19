@@ -3,16 +3,16 @@ package sevastjan.universalScheduler.scheduling.schedulers;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import sevastjan.universalScheduler.UniversalScheduler;
 import sevastjan.universalScheduler.scheduling.tasks.MyScheduledTask;
 import sevastjan.universalScheduler.scheduling.tasks.PaperScheduledTask;
 
 public class PaperScheduler implements TaskScheduler {
 
-    final UniversalScheduler plugin;
+    final JavaPlugin plugin;
 
-    public PaperScheduler(UniversalScheduler plugin) {
+    public PaperScheduler(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
