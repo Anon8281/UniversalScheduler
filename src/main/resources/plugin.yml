@@ -1,0 +1,6 @@
+name: UniversalScheduler
+version: ${project.version}
+main: sevastjan.universalScheduler.UniversalScheduler
+api-version: 1.19
+authors: [ Sevastjan, Anon8281, Several]
+website: politcubes.com
