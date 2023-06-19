@@ -111,4 +111,10 @@ public class FoliaScheduler implements TaskScheduler {
         asyncScheduler.cancelTasks(plugin);
     }
 
+    @Override
+    public void cancelTasks(JavaPlugin plugin) {
+        globalRegionScheduler.cancelTasks(plugin);
+        asyncScheduler.cancelTasks(plugin);
+    }
+
 }

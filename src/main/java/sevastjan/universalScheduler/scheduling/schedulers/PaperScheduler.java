@@ -70,4 +70,9 @@ public class PaperScheduler implements TaskScheduler {
     public void cancelTasks() {
         Bukkit.getScheduler().cancelTasks(plugin);
     }
+
+    @Override
+    public void cancelTasks(JavaPlugin plugin) {
+        Bukkit.getScheduler().cancelTasks(plugin);
+    }
 }

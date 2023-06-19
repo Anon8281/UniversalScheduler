@@ -22,16 +22,25 @@ public interface TaskScheduler {
 
     @NotNull MyScheduledTask runTaskTimer(@NotNull Runnable runnable, long delay, long period);
 
+    /**
+     * Deprecated: use {@link #runTask(Runnable)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTask(JavaPlugin plugin, @NotNull Runnable runnable) {
         return runTask(runnable);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskLater(Runnable, long)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTaskLater(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskTimer(Runnable, long, long)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTaskTimer(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
@@ -67,20 +76,31 @@ public interface TaskScheduler {
 
     @NotNull MyScheduledTask runTaskTimerAsynchronously(@NotNull Runnable runnable, long delay, long period);
 
+    /**
+     * Deprecated: use {@link #runTaskAsynchronously(Runnable)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTaskAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable) {
         return runTaskAsynchronously(runnable);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskLaterAsynchronously(Runnable, long)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTaskLaterAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
         return runTaskLaterAsynchronously(runnable, delay);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskTimerAsynchronously(Runnable, long, long)}
+     */
     @Deprecated
     default @NotNull MyScheduledTask runTaskTimerAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return runTaskTimerAsynchronously(runnable, delay, period);
     }
 
     void cancelTasks();
+
+    void cancelTasks(JavaPlugin plugin);
 }

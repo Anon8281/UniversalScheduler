@@ -1,5 +1,6 @@
 package sevastjan.universalScheduler;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import sevastjan.universalScheduler.scheduling.schedulers.FoliaScheduler;
 import sevastjan.universalScheduler.scheduling.schedulers.PaperScheduler;
@@ -19,6 +20,9 @@ public class UniversalScheduler extends JavaPlugin {
         return isFolia ? new FoliaScheduler(plugin) : new PaperScheduler(plugin);
     }
 
+    /**
+     * Deprecated: use {@link #getScheduler(JavaPlugin)}
+     */
     @Deprecated
     public static TaskScheduler getScheduler() {
         return getScheduler(plugin);
