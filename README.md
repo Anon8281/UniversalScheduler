@@ -6,13 +6,10 @@
 But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 
 ### Maven information
-Now you have to add .jar file to your project (to `src/libs` folder)
 ```xml
-<dependency>
-    <groupId>sevastjan</groupId>
+	<dependency>
+    <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>1.0</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/src/libs/UniversalScheduler-1.0.jar</systemPath>
+    <version>0.0.5</version>
 </dependency>
  ```
