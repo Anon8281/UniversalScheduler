@@ -9,8 +9,8 @@ import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskSchedule
 import com.github.Anon8281.universalScheduler.utils.JavaUtil;
 
 public class UniversalScheduler extends JavaPlugin {
-    private static final boolean isFolia = JavaUtil.classExists("io.papermc.paper.threadedregions.RegionizedServer");
-    private static final boolean isExpandedSchedulingAvailable = JavaUtil.classExists("io.papermc.paper.threadedregions.scheduler.ScheduledTask");
+    public static final boolean isFolia = JavaUtil.classExists("io.papermc.paper.threadedregions.RegionizedServer");
+    public static final boolean isExpandedSchedulingAvailable = JavaUtil.classExists("io.papermc.paper.threadedregions.scheduler.ScheduledTask");
 
     static UniversalScheduler plugin;
 
