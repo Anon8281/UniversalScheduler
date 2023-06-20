@@ -10,6 +10,6 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
 </dependency>
  ```
