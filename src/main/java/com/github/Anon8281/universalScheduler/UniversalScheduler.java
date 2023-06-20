@@ -3,6 +3,7 @@ package com.github.Anon8281.universalScheduler;
 import com.github.Anon8281.universalScheduler.scheduling.schedulers.BukkitScheduler;
 import com.github.Anon8281.universalScheduler.scheduling.schedulers.FoliaScheduler;
 import com.github.Anon8281.universalScheduler.scheduling.schedulers.PaperScheduler;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskScheduler;
 import com.github.Anon8281.universalScheduler.utils.JavaUtil;
@@ -18,12 +19,12 @@ public class UniversalScheduler extends JavaPlugin {
         plugin = this;
     }
 
-    public static TaskScheduler getScheduler(JavaPlugin plugin) {
+    public static TaskScheduler getScheduler(Plugin plugin) {
         return isFolia ? new FoliaScheduler(plugin) : (isExpandedSchedulingAvailable ? new PaperScheduler(plugin) : new BukkitScheduler(plugin));
     }
 
     /**
-     * Deprecated: use {@link #getScheduler(JavaPlugin)}
+     * Deprecated: use {@link #getScheduler(Plugin)}
      */
     @Deprecated
     public static TaskScheduler getScheduler() {
