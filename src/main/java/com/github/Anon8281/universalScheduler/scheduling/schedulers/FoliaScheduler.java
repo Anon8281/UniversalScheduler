@@ -7,7 +7,7 @@ import io.papermc.paper.threadedregions.scheduler.RegionScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import com.github.Anon8281.universalScheduler.scheduling.tasks.FoliaScheduledTask;
 
@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 public class FoliaScheduler implements TaskScheduler {
 
-    final JavaPlugin plugin;
+    final Plugin plugin;
 
-    public FoliaScheduler(JavaPlugin plugin) {
+    public FoliaScheduler(Plugin plugin) {
         this.plugin = plugin;
     }
 
@@ -61,17 +61,17 @@ public class FoliaScheduler implements TaskScheduler {
     }
 
     @Override
-    public @NotNull MyScheduledTask runTask(JavaPlugin plugin, @NotNull Runnable runnable) {
+    public @NotNull MyScheduledTask runTask(Plugin plugin, @NotNull Runnable runnable) {
         return new FoliaScheduledTask(globalRegionScheduler.run(plugin, task -> runnable.run()));
     }
 
     @Override
-    public @NotNull MyScheduledTask runTaskLater(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+    public @NotNull MyScheduledTask runTaskLater(Plugin plugin, @NotNull Runnable runnable, long delay) {
         return new FoliaScheduledTask(globalRegionScheduler.runDelayed(plugin, task -> runnable.run(), delay));
     }
 
     @Override
-    public @NotNull MyScheduledTask runTaskTimer(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+    public @NotNull MyScheduledTask runTaskTimer(Plugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return new FoliaScheduledTask(globalRegionScheduler.runAtFixedRate(plugin, task -> runnable.run(), delay, period));
     }
 
@@ -121,17 +121,17 @@ public class FoliaScheduler implements TaskScheduler {
     }
 
     @Override
-    public @NotNull MyScheduledTask runTaskAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable) {
+    public @NotNull MyScheduledTask runTaskAsynchronously(Plugin plugin, @NotNull Runnable runnable) {
         return new FoliaScheduledTask(asyncScheduler.runNow(plugin, task -> runnable.run()));
     }
 
     @Override
-    public @NotNull MyScheduledTask runTaskLaterAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+    public @NotNull MyScheduledTask runTaskLaterAsynchronously(Plugin plugin, @NotNull Runnable runnable, long delay) {
         return new FoliaScheduledTask(asyncScheduler.runDelayed(plugin, task -> runnable.run(), delay * 50L, TimeUnit.MILLISECONDS));
     }
 
     @Override
-    public @NotNull MyScheduledTask runTaskTimerAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+    public @NotNull MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return new FoliaScheduledTask(asyncScheduler.runAtFixedRate(plugin, task -> runnable.run(), delay * 50, period * 50, TimeUnit.MILLISECONDS));
     }
 
@@ -142,7 +142,7 @@ public class FoliaScheduler implements TaskScheduler {
     }
 
     @Override
-    public void cancelTasks(JavaPlugin plugin) {
+    public void cancelTasks(Plugin plugin) {
         globalRegionScheduler.cancelTasks(plugin);
         asyncScheduler.cancelTasks(plugin);
     }

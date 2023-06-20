@@ -5,18 +5,18 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 
-public class PaperScheduledTask implements MyScheduledTask {
+public class BukkitScheduledTask implements MyScheduledTask {
 
     BukkitTask task;
 
     boolean isRepeating;
 
-    public PaperScheduledTask(final BukkitTask task) {
+    public BukkitScheduledTask(final BukkitTask task) {
         this.task = task;
         this.isRepeating = false;
     }
 
-    public PaperScheduledTask(final BukkitTask task, boolean isRepeating) {
+    public BukkitScheduledTask(final BukkitTask task, boolean isRepeating) {
         this.task = task;
         this.isRepeating = isRepeating;
     }

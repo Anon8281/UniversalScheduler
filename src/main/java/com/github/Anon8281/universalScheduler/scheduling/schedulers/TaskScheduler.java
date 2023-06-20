@@ -3,7 +3,7 @@ package com.github.Anon8281.universalScheduler.scheduling.schedulers;
 import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 public interface TaskScheduler {
@@ -26,7 +26,7 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTask(Runnable)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTask(JavaPlugin plugin, @NotNull Runnable runnable) {
+    default @NotNull MyScheduledTask runTask(Plugin plugin, @NotNull Runnable runnable) {
         return runTask(runnable);
     }
 
@@ -34,7 +34,7 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTaskLater(Runnable, long)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTaskLater(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+    default @NotNull MyScheduledTask runTaskLater(Plugin plugin, @NotNull Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
     }
 
@@ -42,7 +42,7 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTaskTimer(Runnable, long, long)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTaskTimer(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+    default @NotNull MyScheduledTask runTaskTimer(Plugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
     }
 
@@ -80,7 +80,7 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTaskAsynchronously(Runnable)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTaskAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable) {
+    default @NotNull MyScheduledTask runTaskAsynchronously(Plugin plugin, @NotNull Runnable runnable) {
         return runTaskAsynchronously(runnable);
     }
 
@@ -88,7 +88,7 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTaskLaterAsynchronously(Runnable, long)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTaskLaterAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay) {
+    default @NotNull MyScheduledTask runTaskLaterAsynchronously(Plugin plugin, @NotNull Runnable runnable, long delay) {
         return runTaskLaterAsynchronously(runnable, delay);
     }
 
@@ -96,11 +96,11 @@ public interface TaskScheduler {
      * Deprecated: use {@link #runTaskTimerAsynchronously(Runnable, long, long)}
      */
     @Deprecated
-    default @NotNull MyScheduledTask runTaskTimerAsynchronously(JavaPlugin plugin, @NotNull Runnable runnable, long delay, long period) {
+    default @NotNull MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, @NotNull Runnable runnable, long delay, long period) {
         return runTaskTimerAsynchronously(runnable, delay, period);
     }
 
     void cancelTasks();
 
-    void cancelTasks(JavaPlugin plugin);
+    void cancelTasks(Plugin plugin);
 }
