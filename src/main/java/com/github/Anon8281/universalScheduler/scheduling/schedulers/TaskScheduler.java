@@ -1,9 +1,11 @@
 package com.github.Anon8281.universalScheduler.scheduling.schedulers;
 
 import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 public interface TaskScheduler {
@@ -54,7 +56,15 @@ public interface TaskScheduler {
         return runTaskLater(runnable, delay);
     }
 
+    default @NotNull MyScheduledTask scheduleSyncDelayedTask(@NotNull Runnable runnable, long delay) {
+        return runTaskLater(runnable, delay);
+    }
+
     default @NotNull MyScheduledTask runTaskTimer(@NotNull Location location, @NotNull Runnable runnable, long delay, long period) {
+        return runTaskTimer(runnable, delay, period);
+    }
+
+    default @NotNull MyScheduledTask scheduleSyncRepeatingTask(@NotNull Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
     }
 
