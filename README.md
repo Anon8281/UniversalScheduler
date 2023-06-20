@@ -7,7 +7,7 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 
 ### Maven information
 ```xml
-	<dependency>
+<dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
     <version>0.0.5</version>
