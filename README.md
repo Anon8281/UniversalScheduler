@@ -7,6 +7,12 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 
 ### Maven information
 ```xml
+<repository>
+	<id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+</repository>
+```
+```xml
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
