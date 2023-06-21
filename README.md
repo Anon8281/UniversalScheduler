@@ -44,7 +44,6 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 ```
 
 ```xml
-
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
