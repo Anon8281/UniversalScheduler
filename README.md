@@ -1,5 +1,10 @@
 ## Universal Scheduler
 
+### Supported:
+- Folia
+- Paper
+- Spigot
+
 > Please be patient, i have autism
 
 **It's enough to replace `Bukkit.getScheduler()` with `UniversalScheduler.getScheduler()` to make old plugins work with
@@ -9,7 +14,7 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
 
 ### How to use scheduler?
 
-1. In your plugin Main add:
+1. To your plugin Main add:
 
 ```java
     @Getter
@@ -17,22 +22,21 @@ But may be you should refactor plugins neat and right. ¯\_(ツ)_/¯
                      ...
     @Override
     public void onEnable() {
+            //if your already have onEnable() just add next line to it
             scheduler = UniversalScheduler.getScheduler(this);
     }
 ```
 
 2. Call it just like 
 ```java
-    Main.getScheduler().runTaskLater(() -> {
+    Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
         Bukkit.broadcastMessage("Wow, it was scheduled")
     }, 10L);
 ```
->**_Main_ there is your plugin Main**
 
 ### Maven information
 
 ```xml
-
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
