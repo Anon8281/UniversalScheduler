@@ -3,7 +3,6 @@ package com.github.Anon8281.universalScheduler;
 import com.github.Anon8281.scheduling.schedulers.TaskScheduler;
 import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
 import org.bukkit.plugin.Plugin;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class UniversalRunnable implements Runnable {
     MyScheduledTask task;
