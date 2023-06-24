@@ -17,18 +17,6 @@
     <dependencies>
         <dependency>
             <groupId>com.github.Anon8281</groupId>
-            <artifactId>Scheduling</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Anon8281</groupId>
-            <artifactId>MockedPaperApi</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Anon8281</groupId>
             <artifactId>FoliaScheduler</artifactId>
             <version>1.0</version>
             <scope>compile</scope>

@@ -3,7 +3,6 @@ package com.github.Anon8281.foliaScheduler;
 import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import org.bukkit.plugin.Plugin;
-import org.jetbrains.annotations.NotNull;
 
 public class FoliaScheduledTask implements MyScheduledTask {
     private final ScheduledTask task;

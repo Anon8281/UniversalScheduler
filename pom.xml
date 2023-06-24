@@ -15,8 +15,8 @@
         <module>MockedPaperApi</module>
         <module>Scheduling</module>
         <module>FoliaScheduler</module>
-        <module>PaperScheduler</module>
         <module>BukkitScheduler</module>
+        <module>PaperScheduler</module>
         <module>Main</module>
     </modules>
 
@@ -36,5 +36,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

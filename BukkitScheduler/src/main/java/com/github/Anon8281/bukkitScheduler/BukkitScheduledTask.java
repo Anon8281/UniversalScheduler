@@ -4,7 +4,6 @@ import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
-import org.jetbrains.annotations.NotNull;
 
 public class BukkitScheduledTask implements MyScheduledTask {
 
@@ -33,7 +32,7 @@ public class BukkitScheduledTask implements MyScheduledTask {
     }
 
     @Override
-    public  Plugin getOwningPlugin() {
+    public Plugin getOwningPlugin() {
         return task.getOwner();
     }
 
