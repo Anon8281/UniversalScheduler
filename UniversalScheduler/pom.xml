@@ -6,11 +6,11 @@
 
     <parent>
         <groupId>com.github.Anon8281</groupId>
-        <artifactId>UniversalScheduler</artifactId>
+        <artifactId>UniversalScheduler-parent</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>Main</artifactId>
+    <artifactId>UniversalScheduler</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
 

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.Anon8281</groupId>
-    <artifactId>UniversalScheduler</artifactId>
+    <artifactId>UniversalScheduler-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>UniversalScheduler</name>
+    <name>UniversalScheduler-parent</name>
 
     <modules>
         <module>MockedPaperApi</module>
@@ -17,7 +17,7 @@
         <module>FoliaScheduler</module>
         <module>BukkitScheduler</module>
         <module>PaperScheduler</module>
-        <module>Main</module>
+        <module>UniversalScheduler</module>
     </modules>
 
     <properties>
