@@ -3,7 +3,7 @@ package com.github.Anon8281.universalScheduler;
 import com.github.Anon8281.bukkitScheduler.BukkitScheduler;
 import com.github.Anon8281.foliaScheduler.FoliaScheduler;
 import com.github.Anon8281.paperScheduler.PaperScheduler;
-import com.github.Anon8281.scheduling.schedulers.TaskScheduler;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskScheduler;
 import com.github.Anon8281.universalScheduler.utils.JavaUtil;
 import org.bukkit.plugin.Plugin;
 

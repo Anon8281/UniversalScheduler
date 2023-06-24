@@ -1,6 +1,6 @@
 package com.github.Anon8281.foliaScheduler;
 
-import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import org.bukkit.plugin.Plugin;
 

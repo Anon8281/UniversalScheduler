@@ -1,6 +1,6 @@
-package com.github.Anon8281.scheduling.schedulers;
+package com.github.Anon8281.universalScheduler.scheduling.schedulers;
 
-import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.Plugin;

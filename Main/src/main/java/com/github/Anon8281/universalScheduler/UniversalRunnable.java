@@ -1,7 +1,7 @@
 package com.github.Anon8281.universalScheduler;
 
-import com.github.Anon8281.scheduling.schedulers.TaskScheduler;
-import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskScheduler;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import org.bukkit.plugin.Plugin;
 
 public abstract class UniversalRunnable implements Runnable {

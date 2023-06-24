@@ -1,6 +1,6 @@
 package com.github.Anon8281.bukkitScheduler;
 
-import com.github.Anon8281.scheduling.tasks.MyScheduledTask;
+import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;

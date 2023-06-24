@@ -1,4 +1,4 @@
-package com.github.Anon8281.scheduling.tasks;
+package com.github.Anon8281.universalScheduler.scheduling.tasks;
 
 import org.bukkit.plugin.Plugin;
 
