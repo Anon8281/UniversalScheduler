@@ -37,7 +37,7 @@
     </repositories>
 
     <dependencies>
-<!--        i have to use it (folia & support compiled on java 17)-->
+<!--        i have to use it (folia & paper compiled on java 17)-->
         <dependency>
             <groupId>com.github.Anon8281</groupId>
             <artifactId>MockedPaperApi</artifactId>
