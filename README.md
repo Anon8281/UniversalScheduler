@@ -15,15 +15,15 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
 1. To your plugin Main add:
 
 ```java
-private static final TaskScheduler SCHEDULER = null;
+private static TaskScheduler SCHEDULER;
         ...
 @Override
 public void onEnable() {
         //if your already have onEnable() just add next line to it
-        SHEDULER = UniversalScheduler.getScheduler(this);
+        SCHEDULER = UniversalScheduler.getScheduler(this);
 }
         ...
-public static getScheduler() {
+public static TaskScheduler getScheduler() {
         return SCHEDULER;
 }
 ```
