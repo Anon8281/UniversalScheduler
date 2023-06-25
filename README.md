@@ -1,7 +1,11 @@
 ## Universal Scheduler
-Is a lib for java minecraft plugins for simplify realisation their Folia support 
-> Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*` scheduling methods
+
+Is a lib for java minecraft plugins for simplify realisation their Folia support.
+> Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*`
+> scheduling methods
+
 ### Supported:
+
 - Folia
 - Paper
 - Spigot
@@ -11,21 +15,25 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
 1. To your plugin Main add:
 
 ```java
-    @Getter
-    private static TaskScheduler scheduler;
-                     ...
-    @Override
-    public void onEnable() {
-            //if your already have onEnable() just add next line to it
-            scheduler = UniversalScheduler.getScheduler(this);
-    }
+private static final TaskScheduler SCHEDULER;
+        ...
+@Override
+public void onEnable() {
+        //if your already have onEnable() just add next line to it
+        SHEDULER = UniversalScheduler.getScheduler(this);
+}
+        ...
+public static getScheduler() {
+        return SCHEDULER;
+}
 ```
 
-2. Call it just like 
+2. Call it just like
+
 ```java
-    Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
+Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
         Bukkit.broadcastMessage("Wow, it was scheduled")
-    }, 10L);
+}, 10L);
 ```
 
 ### Maven information
@@ -45,7 +53,9 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
     <scope>compile</scope>
 </dependency>
  ```
+
 Shading:
+
 ```xml
 <plugins>
     <plugin>
@@ -64,9 +74,35 @@ Shading:
                             <include>com.github.Anon8281:UniversalScheduler</include>
                         </includes>
                     </artifactSet>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.github.Anon8281.universalScheduler</pattern>
+                            <shadedPattern>[YOUR_PLUGIN_PACKAGE].universalScheduler</shadedPattern> <!-- Replace this -->
+                        </relocation>
+                    </relocations>
                 </configuration>
             </execution>
         </executions>
     </plugin>
 </plugins>
+```
+
+### Gradle information
+```groovy
+repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+}
+```
+```groovy
+dependencies {
+    ...
+    implementation 'com.github.Anon8281:UniversalScheduler:0.1.3'
+}
+```
+Shading:
+```groovy
+shadowJar {
+    relocate 'com.github.Anon8281.universalScheduler', '[YOUR_PLUGIN_PACKAGE].universalScheduler' //Replace this
+}
 ```
