@@ -42,6 +42,31 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
     <version>0.1.3</version>
-    <scope>provided</scope>
+    <scope>compile</scope>
 </dependency>
  ```
+Shading:
+```xml
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+            <execution>
+                <phase>package</phase>
+                <goals>
+                    <goal>shade</goal>
+                </goals>
+                <configuration>
+                    <artifactSet>
+                        <includes>
+                            <include>com.github.Anon8281:UniversalScheduler</include>
+                        </includes>
+                    </artifactSet>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+</plugins>
+```
