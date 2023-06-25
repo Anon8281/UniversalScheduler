@@ -15,7 +15,7 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
 1. To your plugin Main add:
 
 ```java
-private static final TaskScheduler SCHEDULER;
+private static final TaskScheduler SCHEDULER = null;
         ...
 @Override
 public void onEnable() {
@@ -77,7 +77,8 @@ Shading:
                     <relocations>
                         <relocation>
                             <pattern>com.github.Anon8281.universalScheduler</pattern>
-                            <shadedPattern>[YOUR_PLUGIN_PACKAGE].universalScheduler</shadedPattern> <!-- Replace this -->
+<!--                                 Don't forget to replace -->
+                            <shadedPattern>[YOUR_PLUGIN_PACKAGE].universalScheduler</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -103,6 +104,7 @@ dependencies {
 Shading:
 ```groovy
 shadowJar {
-    relocate 'com.github.Anon8281.universalScheduler', '[YOUR_PLUGIN_PACKAGE].universalScheduler' //Replace this
+    //Don't forget to replace
+    relocate 'com.github.Anon8281.universalScheduler', '[YOUR_PLUGIN_PACKAGE].universalScheduler' 
 }
 ```
