@@ -5,18 +5,44 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.Anon8281</groupId>
-    <artifactId>UniversalScheduler-parent</artifactId>
+    <artifactId>UniversalScheduler</artifactId>
+    <packaging>jar</packaging>
     <version>1.0</version>
-    <packaging>pom</packaging>
-
-    <name>UniversalScheduler-parent</name>
-
-    <modules>
-        <module>MockedPaperApi</module>
-        <module>UniversalScheduler</module>
-    </modules>
 
     <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+<!--        i have to use it (folia & support compiled on java 17)-->
+        <dependency>
+            <groupId>com.github.Anon8281</groupId>
+            <artifactId>MockedPaperApi</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>
