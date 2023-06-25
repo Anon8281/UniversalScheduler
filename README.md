@@ -39,7 +39,7 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
 
 ```xml
 <dependency>
-    <groupId>com.github.Anon8281.UniversalScheduler</groupId>
+    <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
     <version>0.1.3</version>
     <scope>provided</scope>
