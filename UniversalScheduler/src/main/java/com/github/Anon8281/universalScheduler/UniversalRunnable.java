@@ -4,6 +4,7 @@ import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskSchedule
 import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import org.bukkit.plugin.Plugin;
 
+/** Just modified BukkitRunnable */
 public abstract class UniversalRunnable implements Runnable {
     MyScheduledTask task;
 

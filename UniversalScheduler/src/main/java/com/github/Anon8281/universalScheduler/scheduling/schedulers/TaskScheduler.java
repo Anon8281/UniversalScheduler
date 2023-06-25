@@ -5,14 +5,31 @@ import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.Plugin;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
+
 public interface TaskScheduler {
 
+    /**
+     * Paper: returns {@link org.bukkit.Server#isPrimaryThread} <br>
+     * Bukkit: returns {@link org.bukkit.Server#isPrimaryThread}
+     */
     boolean isGlobalThread();
 
+    /**
+     * Bukkit: returns {@link org.bukkit.Server#isPrimaryThread}
+     */
     boolean isTickThread();
 
+    /**
+     * Bukkit: returns {@link org.bukkit.Server#isPrimaryThread}
+     */
     boolean isEntityThread(Entity entity);
 
+    /**
+     * Bukkit: returns {@link org.bukkit.Server#isPrimaryThread}
+     */
     boolean isRegionThread(Location location);
 
     MyScheduledTask runTask(Runnable runnable);
@@ -105,6 +122,22 @@ public interface TaskScheduler {
     @Deprecated
     default MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, Runnable runnable, long delay, long period) {
         return runTaskTimerAsynchronously(runnable, delay, period);
+    }
+
+    /**
+     * Deprecated: magic method
+     */
+    @Deprecated
+    default <T> Future<T> callSyncMethod(final Callable<T> task) {
+        CompletableFuture<T> completableFuture = new CompletableFuture<>();
+        runTask(() -> {
+            try {
+                completableFuture.complete(task.call());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+        return completableFuture;
     }
 
     void cancelTasks();
