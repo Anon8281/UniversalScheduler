@@ -51,6 +51,10 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLater(Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        if (delay <= 0) {
+            return runTask(runnable);
+        }
         return new FoliaScheduledTask(globalRegionScheduler.runDelayed(plugin, task -> runnable.run(), delay));
     }
 
@@ -66,6 +70,10 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLater(Plugin plugin, Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        if (delay <= 0) {
+            return runTask(plugin, runnable);
+        }
         return new FoliaScheduledTask(globalRegionScheduler.runDelayed(plugin, task -> runnable.run(), delay));
     }
 
@@ -81,6 +89,10 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLater(Location location, Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        if (delay <= 0) {
+            return runTask(runnable);
+        }
         return new FoliaScheduledTask(regionScheduler.runDelayed(plugin, location, task -> runnable.run(), delay));
     }
 
@@ -96,6 +108,10 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLater(Entity entity, Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        if (delay <= 0) {
+            return runTask(plugin, runnable);
+        }
         return new FoliaScheduledTask(regionScheduler.runDelayed(plugin, entity.getLocation(), task -> runnable.run(), delay));
     }
 
@@ -111,6 +127,10 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLaterAsynchronously(Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        if (delay <= 0) {
+            return runTaskAsynchronously(runnable);
+        }
         return new FoliaScheduledTask(asyncScheduler.runDelayed(plugin, task -> runnable.run(), delay * 50L, TimeUnit.MILLISECONDS));
     }
 

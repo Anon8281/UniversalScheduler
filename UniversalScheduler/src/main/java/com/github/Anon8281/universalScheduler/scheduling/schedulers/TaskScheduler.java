@@ -70,8 +70,14 @@ public interface TaskScheduler {
         return runTaskLater(runnable, delay);
     }
 
+    @Deprecated
     default MyScheduledTask scheduleSyncDelayedTask(Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
+    }
+
+    @Deprecated
+    default MyScheduledTask scheduleSyncDelayedTask(Runnable runnable) {
+        return runTask(runnable);
     }
 
     default MyScheduledTask runTaskTimer(Location location, Runnable runnable, long delay, long period) {
