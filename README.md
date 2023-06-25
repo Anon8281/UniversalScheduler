@@ -41,7 +41,7 @@ Is a lib for java minecraft plugins for simplify realisation their Folia support
 <dependency>
     <groupId>com.github.Anon8281.UniversalScheduler</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.0.9</version>
+    <version>0.1.0</version>
     <scope>provided</scope>
 </dependency>
  ```
