@@ -31,64 +31,14 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
-                <configuration>
-                    <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml
-                    </dependencyReducedPomLocation>
-                    <artifactSet>
-                        <includes>
-                            <include>com.github.Anon8281:Scheduling</include>
-                            <include>com.github.Anon8281:BukkitScheduler</include>
-                            <include>com.github.Anon8281:FoliaScheduler</include>
-                            <include>com.github.Anon8281:PaperScheduler</include>
-                        </includes>
-                    </artifactSet>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.MF</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <dependencies>
+<!--        i have to use it (folia & support compiled on java 17)-->
         <dependency>
             <groupId>com.github.Anon8281</groupId>
-            <artifactId>BukkitScheduler</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Anon8281</groupId>
-            <artifactId>FoliaScheduler</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Anon8281</groupId>
-            <artifactId>PaperScheduler</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Anon8281</groupId>
-            <artifactId>Scheduling</artifactId>
+            <artifactId>MockedPaperApi</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>

@@ -1,4 +1,4 @@
-package com.github.Anon8281.foliaScheduler;
+package com.github.Anon8281.universalScheduler.foliaScheduler;
 
 import com.github.Anon8281.universalScheduler.scheduling.tasks.MyScheduledTask;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
@@ -19,7 +19,7 @@ public class FoliaScheduledTask implements MyScheduledTask {
         return this.task.isCancelled();
     }
 
-    public  Plugin getOwningPlugin() {
+    public Plugin getOwningPlugin() {
         return this.task.getOwningPlugin();
     }
 

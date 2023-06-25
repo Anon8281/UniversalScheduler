@@ -6,6 +6,7 @@ import org.bukkit.plugin.Plugin;
 
 public abstract class UniversalRunnable implements Runnable {
     MyScheduledTask task;
+
     public synchronized void cancel() throws IllegalStateException {
         task.cancel();
     }
@@ -30,8 +31,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTask(Runnable)
      */
-    
-    public synchronized MyScheduledTask runTask( Plugin plugin) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTask(Plugin plugin) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTask(this));
     }
@@ -48,8 +49,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTaskAsynchronously(Runnable)
      */
-    
-    public synchronized MyScheduledTask runTaskAsynchronously( Plugin plugin) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTaskAsynchronously(Plugin plugin) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTaskAsynchronously(this));
     }
@@ -64,8 +65,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTaskLater(Runnable, long)
      */
-    
-    public synchronized MyScheduledTask runTaskLater( Plugin plugin, long delay) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTaskLater(Plugin plugin, long delay) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTaskLater(this, delay));
     }
@@ -84,8 +85,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTaskLaterAsynchronously(Runnable, long)
      */
-    
-    public synchronized MyScheduledTask runTaskLaterAsynchronously( Plugin plugin, long delay) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTaskLaterAsynchronously(Plugin plugin, long delay) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTaskLaterAsynchronously(this, delay));
     }
@@ -102,8 +103,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTaskTimer(Runnable, long, long)
      */
-    
-    public synchronized MyScheduledTask runTaskTimer( Plugin plugin, long delay, long period) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTaskTimer(Plugin plugin, long delay, long period) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTaskTimer(this, delay, period));
     }
@@ -124,8 +125,8 @@ public abstract class UniversalRunnable implements Runnable {
      * @throws IllegalStateException    if this was already scheduled
      * @see TaskScheduler#runTaskTimerAsynchronously(Runnable, long, long)
      */
-    
-    public synchronized MyScheduledTask runTaskTimerAsynchronously( Plugin plugin, long delay, long period) throws IllegalArgumentException, IllegalStateException {
+
+    public synchronized MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, long delay, long period) throws IllegalArgumentException, IllegalStateException {
         checkNotYetScheduled();
         return setupTask(UniversalScheduler.getScheduler(plugin).runTaskTimerAsynchronously(this, delay, period));
     }
@@ -142,8 +143,8 @@ public abstract class UniversalRunnable implements Runnable {
         }
     }
 
-    
-    private MyScheduledTask setupTask( final MyScheduledTask task) {
+
+    private MyScheduledTask setupTask(final MyScheduledTask task) {
         this.task = task;
         return task;
     }

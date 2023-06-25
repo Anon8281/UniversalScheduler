@@ -1,6 +1,6 @@
-package com.github.Anon8281.paperScheduler;
+package com.github.Anon8281.universalScheduler.paperScheduler;
 
-import com.github.Anon8281.foliaScheduler.FoliaScheduler;
+import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 

@@ -1,5 +1,6 @@
 ## Universal Scheduler
-
+Is a lib for java minecraft plugins for simplify realisation their Folia support 
+> Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*` scheduling methods
 ### Supported:
 - Folia
 - Paper
@@ -40,7 +41,7 @@
 <dependency>
     <groupId>com.github.Anon8281.UniversalScheduler</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.0.0.4</version>
+    <version>0.0.9</version>
     <scope>provided</scope>
 </dependency>
  ```

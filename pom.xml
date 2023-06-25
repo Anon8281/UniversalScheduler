@@ -13,15 +13,10 @@
 
     <modules>
         <module>MockedPaperApi</module>
-        <module>Scheduling</module>
-        <module>FoliaScheduler</module>
-        <module>BukkitScheduler</module>
-        <module>PaperScheduler</module>
         <module>UniversalScheduler</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>

@@ -14,8 +14,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mvn -B package --file pom.xml
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2-preview
-        with:
-          name: build
-          path: target/*.jar
