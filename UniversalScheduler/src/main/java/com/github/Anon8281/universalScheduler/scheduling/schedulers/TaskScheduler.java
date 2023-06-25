@@ -62,40 +62,68 @@ public interface TaskScheduler {
         return runTaskTimer(runnable, delay, period);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTask(Location location, Runnable runnable) {
         return runTask(runnable);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTaskLater(Location location, Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskLater(Runnable, long)}
+     */
     @Deprecated
     default MyScheduledTask scheduleSyncDelayedTask(Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
     }
 
+    /**
+     * Deprecated: use {@link #runTask(Runnable)}
+     */
     @Deprecated
     default MyScheduledTask scheduleSyncDelayedTask(Runnable runnable) {
         return runTask(runnable);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTaskTimer(Location location, Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
     }
 
+    /**
+     * Deprecated: use {@link #runTaskTimer(Runnable, long, long)}
+     */
+    @Deprecated
     default MyScheduledTask scheduleSyncRepeatingTask(Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTask(Entity entity, Runnable runnable) {
         return runTask(runnable);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTaskLater(Entity entity, Runnable runnable, long delay) {
         return runTaskLater(runnable, delay);
     }
 
+    /**
+     * Note: overrided on Folia & Paper
+     */
     default MyScheduledTask runTaskTimer(Entity entity, Runnable runnable, long delay, long period) {
         return runTaskTimer(runnable, delay, period);
     }

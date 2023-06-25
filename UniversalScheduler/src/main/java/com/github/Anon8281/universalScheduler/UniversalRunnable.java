@@ -9,6 +9,7 @@ public abstract class UniversalRunnable implements Runnable {
     MyScheduledTask task;
 
     public synchronized void cancel() throws IllegalStateException {
+        checkScheduled();
         task.cancel();
     }
 
