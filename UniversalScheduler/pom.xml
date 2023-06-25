@@ -40,7 +40,7 @@
             <groupId>com.github.Anon8281</groupId>
             <artifactId>MockedPaperApi</artifactId>
             <version>1.0</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
