@@ -3,6 +3,8 @@
 Is a lib for java minecraft plugins for simplify realisation their Folia support.
 > Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*`
 > scheduling methods
+ 
+### Java version: 8 or above
 
 ### Supported:
 
