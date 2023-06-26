@@ -17,16 +17,16 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 1. To your plugin Main add:
 
 ```java
-private static TaskScheduler SCHEDULER;
+private static TaskScheduler scheduler;
         ...
 @Override
 public void onEnable() {
         //if your already have onEnable() just add next line to it
-        SCHEDULER = UniversalScheduler.getScheduler(this);
+        scheduler = UniversalScheduler.getScheduler(this);
 }
         ...
 public static TaskScheduler getScheduler() {
-        return SCHEDULER;
+        return scheduler;
 }
 ```
 
