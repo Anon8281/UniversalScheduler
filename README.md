@@ -100,7 +100,7 @@ repositories {
 ```groovy
 dependencies {
     ...
-    implementation 'com.github.Anon8281:UniversalScheduler:0.1.3'
+    implementation 'com.github.Anon8281:UniversalScheduler:0.1.4'
 }
 ```
 Shading:
