@@ -51,7 +51,7 @@ Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <scope>compile</scope>
 </dependency>
  ```
