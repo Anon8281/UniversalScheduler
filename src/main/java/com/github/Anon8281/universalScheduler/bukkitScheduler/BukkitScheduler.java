@@ -20,11 +20,6 @@ public class BukkitScheduler implements TaskScheduler {
     }
 
     @Override
-    public boolean isTickThread() {
-        return Bukkit.getServer().isPrimaryThread();
-    }
-
-    @Override
     public boolean isEntityThread(Entity entity) {
         return Bukkit.getServer().isPrimaryThread();
     }
@@ -92,6 +87,11 @@ public class BukkitScheduler implements TaskScheduler {
     @Override
     public MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, Runnable runnable, long delay, long period) {
         return new BukkitScheduledTask(Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, runnable, delay, period));
+    }
+
+    @Override
+    public void execute(Runnable runnable) {
+        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, runnable);
     }
 
     @Override

@@ -60,6 +60,8 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskTimer(Runnable runnable, long delay, long period) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(globalRegionScheduler.runAtFixedRate(plugin, task -> runnable.run(), delay, period));
     }
 
@@ -79,6 +81,8 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskTimer(Plugin plugin, Runnable runnable, long delay, long period) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(globalRegionScheduler.runAtFixedRate(plugin, task -> runnable.run(), delay, period));
     }
 
@@ -98,6 +102,8 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskTimer(Location location, Runnable runnable, long delay, long period) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(regionScheduler.runAtFixedRate(plugin, location, task -> runnable.run(), delay, period));
     }
 
@@ -117,6 +123,8 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskTimer(Entity entity, Runnable runnable, long delay, long period) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(regionScheduler.runAtFixedRate(plugin, entity.getLocation(), task -> runnable.run(), delay, period));
     }
 
@@ -128,9 +136,7 @@ public class FoliaScheduler implements TaskScheduler {
     @Override
     public MyScheduledTask runTaskLaterAsynchronously(Runnable runnable, long delay) {
         //Folia exception: Delay ticks may not be <= 0
-        if (delay <= 0) {
-            return runTaskAsynchronously(runnable);
-        }
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(asyncScheduler.runDelayed(plugin, task -> runnable.run(), delay * 50L, TimeUnit.MILLISECONDS));
     }
 
@@ -146,12 +152,31 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTaskLaterAsynchronously(Plugin plugin, Runnable runnable, long delay) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(asyncScheduler.runDelayed(plugin, task -> runnable.run(), delay * 50L, TimeUnit.MILLISECONDS));
     }
 
     @Override
     public MyScheduledTask runTaskTimerAsynchronously(Plugin plugin, Runnable runnable, long delay, long period) {
+        //Folia exception: Delay ticks may not be <= 0
+        delay = getOneIfNotPositive(delay);
         return new FoliaScheduledTask(asyncScheduler.runAtFixedRate(plugin, task -> runnable.run(), delay * 50, period * 50, TimeUnit.MILLISECONDS));
+    }
+
+    @Override
+    public void execute(Runnable runnable) {
+        globalRegionScheduler.execute(plugin, runnable);
+    }
+
+    @Override
+    public void execute(Location location, Runnable runnable) {
+        regionScheduler.execute(plugin, location, runnable);
+    }
+
+    @Override
+    public void execute(Entity entity, Runnable runnable) {
+        regionScheduler.execute(plugin, entity.getLocation(), runnable);
     }
 
     @Override
@@ -166,4 +191,7 @@ public class FoliaScheduler implements TaskScheduler {
         asyncScheduler.cancelTasks(plugin);
     }
 
+    private long getOneIfNotPositive(long x) {
+        return x <= 0 ? 1L : x;
+    }
 }
