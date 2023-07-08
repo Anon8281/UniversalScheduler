@@ -109,23 +109,23 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public MyScheduledTask runTask(Entity entity, Runnable runnable) {
-        return new FoliaScheduledTask(regionScheduler.run(plugin, entity.getLocation(), task -> runnable.run()));
+        return new FoliaScheduledTask(entity.getScheduler().run(plugin, task -> runnable.run(), null));
     }
 
     @Override
     public MyScheduledTask runTaskLater(Entity entity, Runnable runnable, long delay) {
         //Folia exception: Delay ticks may not be <= 0
         if (delay <= 0) {
-            return runTask(plugin, runnable);
+            return runTask(entity, runnable);
         }
-        return new FoliaScheduledTask(regionScheduler.runDelayed(plugin, entity.getLocation(), task -> runnable.run(), delay));
+        return new FoliaScheduledTask(entity.getScheduler().runDelayed(plugin, task -> runnable.run(), null, delay));
     }
 
     @Override
     public MyScheduledTask runTaskTimer(Entity entity, Runnable runnable, long delay, long period) {
         //Folia exception: Delay ticks may not be <= 0
         delay = getOneIfNotPositive(delay);
-        return new FoliaScheduledTask(regionScheduler.runAtFixedRate(plugin, entity.getLocation(), task -> runnable.run(), delay, period));
+        return new FoliaScheduledTask(entity.getScheduler().runAtFixedRate(plugin, task -> runnable.run(), null, delay, period));
     }
 
     @Override
@@ -176,7 +176,7 @@ public class FoliaScheduler implements TaskScheduler {
 
     @Override
     public void execute(Entity entity, Runnable runnable) {
-        regionScheduler.execute(plugin, entity.getLocation(), runnable);
+        entity.getScheduler().execute(plugin, runnable, null, 1L);
     }
 
     @Override

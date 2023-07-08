@@ -51,7 +51,7 @@ Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.1.4</version>
+    <version>0.1.5</version>
     <scope>compile</scope>
 </dependency>
  ```
@@ -100,7 +100,7 @@ repositories {
 ```groovy
 dependencies {
     ...
-    implementation 'com.github.Anon8281:UniversalScheduler:0.1.4'
+    implementation 'com.github.Anon8281:UniversalScheduler:0.1.5'
 }
 ```
 Shading:
