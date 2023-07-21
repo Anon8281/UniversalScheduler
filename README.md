@@ -1,10 +1,9 @@
-## Universal Scheduler
-[![](https://jitpack.io/v/Anon8281/UniversalScheduler.svg)](https://jitpack.io/#Anon8281/UniversalScheduler)
+# Universal Scheduler [![](https://jitpack.io/v/Anon8281/UniversalScheduler.svg)](https://jitpack.io/#Anon8281/UniversalScheduler)
 
 Is a lib for java minecraft plugins to simplify Folia support implementation
-> Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*`
+> Just for your information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*`
 > scheduling methods
- 
+
 ### Java version: 8 or above
 
 ### Supported:
@@ -13,22 +12,40 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 - Paper
 - Spigot
 
-### How to use scheduler?
+## Plugins using UniversalScheduler
+
+|           **Name**           |                           **Link**                            |
+|:----------------------------:|:-------------------------------------------------------------:|
+|        Brewery (Fork)        |         [GitHub](https://github.com/Anon8281/Brewery)         |
+| InventoryRollbackPlus (Fork) | [GitHub](https://github.com/Anon8281/Inventory-Rollback-Plus) |
+|       CraftBook (Fork)       |        [GitHub](https://github.com/Anon8281/CraftBook)        |
+|    PlaceholderAPI (Fork)     |     [GitHub](https://github.com/Anon8281/PlaceholderAPI)      |
+|      ImageOnMap (Fork)       |       [GitHub](https://github.com/Anon8281/ImageOnMap)        |
+|       BigDoors (Fork)        |        [GitHub](https://github.com/Anon8281/BigDoors)         |
+| WorldGuardExtraFlags (Fork)  |  [GitHub](https://github.com/Anon8281/WorldGuardExtraFlags)   |
+|     HorseTpWithMe (Fork)     |      [GitHub](https://github.com/Anon8281/HorseTpWithMe)      |
+|    BetterTridents (Fork)     |     [GitHub](https://github.com/Anon8281/BetterTridents)      |
+|  HolographicDisplays (Fork)  |   [GitHub](https://github.com/Anon8281/HolographicDisplays)   |
+|     Lucko helper (Fork)      |         [GitHub](https://github.com/Anon8281/helper)          |
+
+## How to use scheduler?
 
 1. To your plugin Main add:
 
 ```java
 private static TaskScheduler scheduler;
 ```
+
 ```java 
 @Override
-public void onEnable() {
+public void onEnable(){
         //if your already have onEnable() just add next line to it
-        scheduler = UniversalScheduler.getScheduler(this);
+        scheduler=UniversalScheduler.getScheduler(this);
 }
 ```
+
 ```java
-public static TaskScheduler getScheduler() {
+public static TaskScheduler getScheduler(){
         return scheduler;
 }
 ```
@@ -37,16 +54,17 @@ public static TaskScheduler getScheduler() {
 
 ```java
 Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
-        Bukkit.broadcastMessage("Wow, it was scheduled")
-}, 10L);
+        Bukkit.broadcastMessage("Wow, it was scheduled");
 ```
 
 3. If you need to get the scheduled task for some reason
+
 ```java
 MyScheduledTask task = Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
-        Bukkit.broadcastMessage("Wow, it was scheduled")
+        Bukkit.broadcastMessage("Wow, it was scheduled");
 }, 10L);
 ```
+
 ### Maven information
 
 ```xml
@@ -100,19 +118,23 @@ Shading:
 ```
 
 ### Gradle information
+
 ```groovy
 repositories {
     ...
     maven { url 'https://jitpack.io' }
 }
 ```
+
 ```groovy
 dependencies {
     ...
     implementation 'com.github.Anon8281:UniversalScheduler:[VERSION]'
 }
 ```
+
 Shading:
+
 ```groovy
 shadowJar {
     //Don't forget to replace
