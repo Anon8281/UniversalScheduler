@@ -1,4 +1,5 @@
 ## Universal Scheduler
+[![](https://jitpack.io/v/Anon8281/UniversalScheduler.svg)](https://jitpack.io/#Anon8281/UniversalScheduler)
 
 Is a lib for java minecraft plugins to simplify Folia support implementation
 > Just for information: Folia doesn't support any of `Bukkit.getScheduler().*` and `Bukkit.getServer().getScheduler().*`
@@ -18,13 +19,15 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 
 ```java
 private static TaskScheduler scheduler;
-        ...
+```
+```java 
 @Override
 public void onEnable() {
         //if your already have onEnable() just add next line to it
         scheduler = UniversalScheduler.getScheduler(this);
 }
-        ...
+```
+```java
 public static TaskScheduler getScheduler() {
         return scheduler;
 }
@@ -38,6 +41,12 @@ Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
 }, 10L);
 ```
 
+3. If you need to get the scheduled task for some reason
+```java
+MyScheduledTask task = Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
+        Bukkit.broadcastMessage("Wow, it was scheduled")
+}, 10L);
+```
 ### Maven information
 
 ```xml
@@ -51,7 +60,7 @@ Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
 <dependency>
     <groupId>com.github.Anon8281</groupId>
     <artifactId>UniversalScheduler</artifactId>
-    <version>0.1.5</version>
+    <version>[VERSION]</version>
     <scope>compile</scope>
 </dependency>
  ```
@@ -100,7 +109,7 @@ repositories {
 ```groovy
 dependencies {
     ...
-    implementation 'com.github.Anon8281:UniversalScheduler:0.1.5'
+    implementation 'com.github.Anon8281:UniversalScheduler:[VERSION]'
 }
 ```
 Shading:
