@@ -15,4 +15,9 @@ public class PaperScheduler extends FoliaScheduler {
         // isGlobalThread does not exist on paper, match the bukkit task scheduler's behaviour.
         return Bukkit.getServer().isPrimaryThread();
     }
+
+    @Override
+    public void cancelTask(int taskId) {
+        Bukkit.getScheduler().cancelTask(taskId);
+    }
 }
