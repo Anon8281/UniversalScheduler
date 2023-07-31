@@ -191,6 +191,11 @@ public class FoliaScheduler implements TaskScheduler {
         asyncScheduler.cancelTasks(plugin);
     }
 
+    @Override
+    public void cancelTask(int taskId) {
+        throw new UnsupportedOperationException("Folia doesn't support this method.");
+    }
+
     private long getOneIfNotPositive(long x) {
         return x <= 0 ? 1L : x;
     }

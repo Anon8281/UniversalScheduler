@@ -31,4 +31,9 @@ public class FoliaScheduledTask implements MyScheduledTask {
     public boolean isRepeatingTask() {
         return this.task.isRepeatingTask();
     }
+
+    @Override
+    public int getTaskId() {
+        throw new UnsupportedOperationException("Folia doesn't support this method.");
+    }
 }

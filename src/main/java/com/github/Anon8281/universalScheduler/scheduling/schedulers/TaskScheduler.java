@@ -320,4 +320,12 @@ public interface TaskScheduler {
      * @param plugin specified plugin
      */
     void cancelTasks(Plugin plugin);
+
+    /**
+     * Removes task from scheduler.<br>
+     * Doesn't support Folia due to Folia don't have this method.
+     * @param taskId Id number of task to be removed
+     * @throws UnsupportedOperationException if invoked on Folia. Use {@link com.github.Anon8281.universalScheduler.UniversalScheduler#isFolia}.
+     */
+    void cancelTask(int taskId);
 }

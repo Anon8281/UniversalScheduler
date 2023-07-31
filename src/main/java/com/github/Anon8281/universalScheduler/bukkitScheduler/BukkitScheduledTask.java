@@ -45,4 +45,9 @@ public class BukkitScheduledTask implements MyScheduledTask {
     public boolean isRepeatingTask() {
         return isRepeating;
     }
+
+    @Override
+    public int getTaskId() {
+        return task.getTaskId();
+    }
 }

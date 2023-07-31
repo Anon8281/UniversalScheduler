@@ -103,4 +103,9 @@ public class BukkitScheduler implements TaskScheduler {
     public void cancelTasks(Plugin plugin) {
         Bukkit.getScheduler().cancelTasks(plugin);
     }
+
+    @Override
+    public void cancelTask(int taskId) {
+        Bukkit.getScheduler().cancelTask(taskId);
+    }
 }
