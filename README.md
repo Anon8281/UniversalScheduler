@@ -27,6 +27,8 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 |    BetterTridents (Fork)     |     [GitHub](https://github.com/Anon8281/BetterTridents)      |
 |  HolographicDisplays (Fork)  |   [GitHub](https://github.com/Anon8281/HolographicDisplays)   |
 |     Lucko helper (Fork)      |         [GitHub](https://github.com/Anon8281/helper)          |
+|       HexNicks (Fork)        |     [GitHub](https://github.com/ewof/HexNicks/tree/folia)     |
+|  WorldEdit (Unstable Fork)   |        [GitHub](https://github.com/Anon8281/WorldEdit)        |
 
 ## How to use scheduler?
 
