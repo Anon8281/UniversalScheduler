@@ -198,6 +198,7 @@ public class FoliaScheduler implements TaskScheduler {
     @Override
     public void cancelTask(int taskId) {
         FoliaScheduledTask.tasks.get(taskId).cancel();
+        FoliaScheduledTask.tasks.remove(taskId);
     }
 
     private long getOneIfNotPositive(long x) {
