@@ -29,10 +29,8 @@ public interface MyScheduledTask {
     boolean isRepeatingTask();
 
     /**
-     * Gets the task id for this runnable.<br>
-     * Doesn't support Folia due to Folia don't have this method.
+     * Gets the task id for this runnable.
      * @return the task id that this runnable was scheduled as
-     * @throws UnsupportedOperationException if invoked on Folia. Use {@link com.github.Anon8281.universalScheduler.UniversalScheduler#isFolia}.
      */
     int getTaskId();
 }
