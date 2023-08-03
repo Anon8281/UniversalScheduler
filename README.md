@@ -40,14 +40,14 @@ private static TaskScheduler scheduler;
 
 ```java 
 @Override
-public void onEnable(){
+public void onEnable() {
         //if your already have onEnable() just add next line to it
-        scheduler=UniversalScheduler.getScheduler(this);
+        scheduler = UniversalScheduler.getScheduler(this);
 }
 ```
 
 ```java
-public static TaskScheduler getScheduler(){
+public static TaskScheduler getScheduler() {
         return scheduler;
 }
 ```
@@ -57,6 +57,7 @@ public static TaskScheduler getScheduler(){
 ```java
 Main.getScheduler().runTaskLater(() -> { //Main there is your plugin Main
         Bukkit.broadcastMessage("Wow, it was scheduled");
+});
 ```
 
 3. If you need to get the scheduled task for some reason
@@ -108,7 +109,7 @@ Shading:
                     <relocations>
                         <relocation>
                             <pattern>com.github.Anon8281.universalScheduler</pattern>
-<!--                                 Don't forget to replace -->
+                            <!-- Don't forget to replace -->
                             <shadedPattern>[YOUR_PLUGIN_PACKAGE].universalScheduler</shadedPattern>
                         </relocation>
                     </relocations>
@@ -123,14 +124,14 @@ Shading:
 
 ```groovy
 repositories {
-    ...
+    //...
     maven { url 'https://jitpack.io' }
 }
 ```
 
 ```groovy
 dependencies {
-    ...
+    //...
     implementation 'com.github.Anon8281:UniversalScheduler:[VERSION]'
 }
 ```
