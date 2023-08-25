@@ -30,6 +30,7 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 |           HexNicks           |        [GitHub](https://github.com/MajekDev/HexNicks)         |
 |  WorldEdit (Unstable Fork)   |        [GitHub](https://github.com/Anon8281/WorldEdit)        |
 |      SuperVanish (Fork)      |   [GitHub](https://github.com/ewof/SuperVanish/tree/folia)    |
+|    TownyWaypoints (Fork)     |       [GitHub](https://github.com/ewof/TownyWaypoints)        |
 
 ## How to use scheduler?
 
