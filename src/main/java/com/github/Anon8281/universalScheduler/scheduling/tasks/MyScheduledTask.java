@@ -27,4 +27,9 @@ public interface MyScheduledTask {
      * @return true if task is repeating, false otherwise
      */
     boolean isRepeatingTask();
+
+    /**
+     * @return Id of task
+     */
+    int getTaskId();
 }

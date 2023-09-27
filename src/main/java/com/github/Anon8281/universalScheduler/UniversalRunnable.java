@@ -145,11 +145,9 @@ public abstract class UniversalRunnable implements Runnable {
         }
     }
 
-
     private MyScheduledTask setupTask(final MyScheduledTask task) {
         this.task = task;
         return task;
     }
-
 
 }

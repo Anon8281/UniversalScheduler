@@ -320,4 +320,18 @@ public interface TaskScheduler {
      * @param plugin specified plugin
      */
     void cancelTasks(Plugin plugin);
+
+    /**
+     * Attempts to cancel task with provided id
+     *
+     * @param taskId specified id of task
+     */
+    void cancel(int taskId);
+
+    /**
+     * Attempts to cancel task
+     *
+     * @param task specified task
+     */
+    void cancel(MyScheduledTask task);
 }
