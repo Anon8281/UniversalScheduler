@@ -11,6 +11,7 @@ Is a lib for java minecraft plugins to simplify Folia support implementation
 - Folia
 - Paper
 - Spigot
+- Canvas
 
 ## Plugins using UniversalScheduler
 
